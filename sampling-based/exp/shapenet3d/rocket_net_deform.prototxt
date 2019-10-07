@@ -110,13 +110,6 @@ layer {
 }
 
 layer {
-  name: "fbn1"
-  type: "BatchNorm"
-  bottom: "fconv1"
-  top: "fbn1"
-}
-
-layer {
   name: "param_fconv1"
   type: "Parameter"
   param {
@@ -136,7 +129,7 @@ layer {
 layer {
   name: "data_lattice0"
   type: "Python"
-  bottom: "fbn1"
+  bottom: "fconv1"
   bottom: "param_fconv1"
   top: "data_lattice0"
   python_param {
@@ -222,13 +215,6 @@ layer {
     }
   }
 }
-
-layer {
-  name: "fbn2"
-  type: "BatchNorm"
-  bottom: "fconv2"
-  top: "fbn2"
-}
 layer {
   name: "param_fconv2"
   type: "Parameter"
@@ -249,7 +235,7 @@ layer {
 layer {
   name: "data_lattice1"
   type: "Python"
-  bottom: "fbn2"
+  bottom: "fconv2"
   bottom: "param_fconv2"
   top: "data_lattice1"
   python_param {
@@ -337,12 +323,6 @@ layer {
 }
 
 layer {
-  name: "fbn3"
-  type: "BatchNorm"
-  bottom: "fconv3"
-  top: "fbn3"
-}
-layer {
   name: "param_fconv3"
   type: "Parameter"
   param {
@@ -362,7 +342,7 @@ layer {
 layer {
   name: "data_lattice2"
   type: "Python"
-  bottom: "fbn3"  
+  bottom: "fconv3"  
   bottom: "param_fconv3"
   top: "data_lattice2"
   python_param {
@@ -450,12 +430,6 @@ layer {
 }
 
 layer {
-  name: "fbn4"
-  type: "BatchNorm"
-  bottom: "fconv4"
-  top: "fbn4"
-}
-layer {
   name: "param_fconv4"
   type: "Parameter"
   param {
@@ -475,7 +449,7 @@ layer {
 layer {
   name: "data_lattice3"
   type: "Python"
-  bottom: "fbn4"  
+  bottom: "fconv4"  
   bottom: "param_fconv4"
   top: "data_lattice3"
   python_param {
@@ -563,12 +537,6 @@ layer {
 }
 
 layer {
-  name: "fbn5"
-  type: "BatchNorm"
-  bottom: "fconv5"
-  top: "fbn5"
-}
-layer {
   name: "param_fconv5"
   type: "Parameter"
   param {
@@ -588,7 +556,7 @@ layer {
 layer {
   name: "data_lattice4"
   type: "Python"
-  bottom: "fbn5"  
+  bottom: "fconv5"  
   bottom: "param_fconv5"
   top: "data_lattice4"
   python_param {

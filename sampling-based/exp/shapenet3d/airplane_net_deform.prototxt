@@ -88,6 +88,7 @@ layer {
   bottom: "bnD1"
   top: "fconv1"
   param {
+    name: "fconv1_w"
     lr_mult: 1.0
   }
   param {
@@ -109,19 +110,31 @@ layer {
 }
 
 layer {
-  name: "fbn1"
-  type: "BatchNorm"
-  bottom: "fconv1"
-  top: "fbn1"
+  name: "param_fconv1"
+  type: "Parameter"
+  param {
+    name: "fconv1_w"
+    lr_mult: 1.0    
+  }
+  parameter_param {
+      shape {
+        dim: 3  # copy the dimension from below
+        dim: 35
+        dim: 1
+        dim: 1
+      }  
+  }
+  top: "param_fconv1"
 }
 layer {
   name: "data_lattice0"
   type: "Python"
-  bottom: "fbn1"
+  bottom: "fconv1"
+  bottom: "param_fconv1"
   top: "data_lattice0"
   python_param {
     module: "custom_layers"
-    layer: "PickAndScale"
+    layer: "NormAndScale"
     param_str: "0*64_1*64_2*64"
   }
 }
@@ -182,6 +195,7 @@ layer {
   bottom: "bnD2"
   top: "fconv2"
   param {
+    name: "fconv2_w"
     lr_mult: 1.0
   }
   param {
@@ -201,21 +215,32 @@ layer {
     }
   }
 }
-
 layer {
-  name: "fbn2"
-  type: "BatchNorm"
-  bottom: "fconv2"
-  top: "fbn2"
+  name: "param_fconv2"
+  type: "Parameter"
+  param {
+    name: "fconv2_w"
+    lr_mult: 1.0    
+  }
+  parameter_param {
+      shape {
+        dim: 3  # copy the dimension from below
+        dim: 67
+        dim: 1
+        dim: 1
+      }  
+  }
+  top: "param_fconv2"
 }
 layer {
   name: "data_lattice1"
   type: "Python"
-  bottom: "fbn2"
+  bottom: "fconv2"
+  bottom: "param_fconv2"
   top: "data_lattice1"
   python_param {
     module: "custom_layers"
-    layer: "PickAndScale"
+    layer: "NormAndScale"
     param_str: "0*32_1*32_2*32"
   }
 }
@@ -276,6 +301,7 @@ layer {
   bottom: "bnD3"
   top: "fconv3"
   param {
+    name: "fconv3_w"
     lr_mult: 1.0
   }
   param {
@@ -297,19 +323,31 @@ layer {
 }
 
 layer {
-  name: "fbn3"
-  type: "BatchNorm"
-  bottom: "fconv3"
-  top: "fbn3"
+  name: "param_fconv3"
+  type: "Parameter"
+  param {
+    name: "fconv3_w"
+    lr_mult: 1.0    
+  }
+  parameter_param {
+      shape {
+        dim: 3  # copy the dimension from below
+        dim: 131
+        dim: 1
+        dim: 1
+      }  
+  }
+  top: "param_fconv3"
 }
 layer {
   name: "data_lattice2"
   type: "Python"
-  bottom: "fbn3"
+  bottom: "fconv3"  
+  bottom: "param_fconv3"
   top: "data_lattice2"
   python_param {
     module: "custom_layers"
-    layer: "PickAndScale"
+    layer: "NormAndScale"
     param_str: "0*16_1*16_2*16"
   }
 }
@@ -370,6 +408,7 @@ layer {
   bottom: "bnD4"
   top: "fconv4"
   param {
+    name: "fconv4_w"  
     lr_mult: 1.0
   }
   param {
@@ -391,19 +430,31 @@ layer {
 }
 
 layer {
-  name: "fbn4"
-  type: "BatchNorm"
-  bottom: "fconv4"
-  top: "fbn4"
+  name: "param_fconv4"
+  type: "Parameter"
+  param {
+    name: "fconv4_w"
+    lr_mult: 1.0    
+  }
+  parameter_param {
+      shape {
+        dim: 3  # copy the dimension from below
+        dim: 259
+        dim: 1
+        dim: 1
+      }  
+  }
+  top: "param_fconv4"
 }
 layer {
   name: "data_lattice3"
   type: "Python"
-  bottom: "fbn4"
+  bottom: "fconv4"  
+  bottom: "param_fconv4"
   top: "data_lattice3"
   python_param {
     module: "custom_layers"
-    layer: "PickAndScale"
+    layer: "NormAndScale"
     param_str: "0*8_1*8_2*8"
   }
 }
@@ -464,6 +515,7 @@ layer {
   bottom: "bnD5"
   top: "fconv5"
   param {
+    name: "fconv5_w"  
     lr_mult: 1.0
   }
   param {
@@ -485,19 +537,31 @@ layer {
 }
 
 layer {
-  name: "fbn5"
-  type: "BatchNorm"
-  bottom: "fconv5"
-  top: "fbn5"
+  name: "param_fconv5"
+  type: "Parameter"
+  param {
+    name: "fconv5_w"
+    lr_mult: 1.0    
+  }
+  parameter_param {
+      shape {
+        dim: 3  # copy the dimension from below
+        dim: 259
+        dim: 1
+        dim: 1
+      }  
+  }
+  top: "param_fconv5"
 }
 layer {
   name: "data_lattice4"
   type: "Python"
-  bottom: "fbn5"
+  bottom: "fconv5"  
+  bottom: "param_fconv5"
   top: "data_lattice4"
   python_param {
     module: "custom_layers"
-    layer: "PickAndScale"
+    layer: "NormAndScale"
     param_str: "0*4_1*4_2*4"
   }
 }

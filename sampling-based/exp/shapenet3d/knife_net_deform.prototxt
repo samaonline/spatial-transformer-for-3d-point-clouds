@@ -9,7 +9,7 @@ layer {
   python_param {
     module: "dataset_shapenet"
     layer: "InputShapenet"
-    param_str: "{\'sample_size\': 3000, \'category\': \'03790512\', \'batch_size\': 24, \'feat_dims\': \'x_y_z\', \'subset\': \'train\', \'root\': \'../../data/shapenet_ericyi_ply\', \'jitter_xyz\': 0.02, \'jitter_stretch\': 0.1, \'jitter_rotation\': 20.0}"
+    param_str: "{\'feat_dims\': \'x_y_z\', \'root\': \'/vis/home/hsu/Workspace1/nvidia/bpcn/data/shapenet/split_ericyi\', \'sample_size\': 3000, \'batch_size\': 32, \'category\': \'03624134\', \'jitter_rotation\': 10.0, \'jitter_xyz\': 0.01, \'subset\': \'train\'}"
   }
 }
 layer {
@@ -23,7 +23,7 @@ layer {
   python_param {
     module: "dataset_shapenet"
     layer: "InputShapenet"
-    param_str: "{\'sample_size\': 3000, \'category\': \'03790512\', \'batch_size\': 10, \'feat_dims\': \'x_y_z\', \'subset\': \'val\', \'root\': \'../../data/shapenet_ericyi_ply\', \'jitter_xyz\': 0.0, \'jitter_stretch\': 0.0, \'jitter_rotation\': 0.0}"
+    param_str: "{\'feat_dims\': \'x_y_z\', \'root\': \'/vis/home/hsu/Workspace1/nvidia/bpcn/data/shapenet/split_ericyi\', \'sample_size\': 3000, \'batch_size\': 32, \'category\': \'03624134\', \'jitter_rotation\': 0.0, \'jitter_xyz\': 0.0, \'subset\': \'val\'}"
   }
 }
 
@@ -668,7 +668,7 @@ layer {
     lr_mult: 0.10000000149
   }
   convolution_param {
-    num_output: 6
+    num_output: 2
     pad: 0
     kernel_size: 1
     stride: 1
