@@ -17,14 +17,14 @@ Further information please contact [Jiayun Wang](mailto:peterwg@berkeley.edu).
 
 ## Requirements
 * [PyTorch](https://pytorch.org/) (for the point-based method, version >= 0.4.1)
-* [CAFFE](https://github.com/samaonline/spatial-transformer-for-3d-point-clouds/caffe-deform/) (for the sampling-based method, please use our version as we rewrite some source codes.)
+* [CAFFE](https://github.com/samaonline/caffe-deform) (for the sampling-based method, please use our version as we rewrite some source codes.)
 * [NCCL](https://github.com/NVIDIA/nccl) (for multi-gpu in the sampling-based method)
 
 ## Sampling-based Methods
 
 ### Install Caffe
 
-Please use [our version of CAFFE](https://github.com/samaonline/spatial-transformer-for-3d-point-clouds/caffe-deform/), as we provide the implementation of spatial transformers for bilateralNN, as described in the paper. A guide to CAFFE installation can be found [here](https://caffe.berkeleyvision.org/installation.html).
+Please use [our version of CAFFE](https://github.com/samaonline/caffe-deform), as we provide the implementation of spatial transformers for bilateralNN, as described in the paper. A guide to CAFFE installation can be found [here](https://caffe.berkeleyvision.org/installation.html).
 
 ### Data Preparation
 
