@@ -28,7 +28,7 @@ Please use [our version of CAFFE](https://github.com/samaonline/spatial-transfor
 
 ### Data Preparation
 
-See instructions in [data/README.md](https://github.com/samaonline/spatial-transformer-for-3d-point-clouds/sampling-based/data/README.md).
+See instructions in [data/README.md](https://github.com/samaonline/spatial-transformer-for-3d-point-clouds/blob/master/sampling-based/data/README.md).
 
 ### Running Examples
 
