@@ -2,7 +2,7 @@
 
 [[Project]](http://pwang.pw/spn.html) [[Paper]](https://arxiv.org/abs/1906.10887)   
 
-## Note
+## Quick Start
 For quick addition of the spatial transformer to your network, refer to [network architecture file](point_based/part_seg/part_seg_model_deform.py#L53) of how transformer can be added, and [offset_deform](point_based/utils/tf_util.py#L120-L160) for the transformer implementation.
 
 ## Overview
