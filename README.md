@@ -29,14 +29,19 @@ Please navigate to the specific folder first.
 cd point_based
 ```
 
-### Install Tensorflow and h5py
+### Install Tensorflow and required packages
 
 Install <a href="https://www.tensorflow.org/get_started/os_setup" target="_blank">TensorFlow</a>. You may also need to install h5py.
 
 To install h5py for Python:
 ```bash
 sudo apt-get install libhdf5-dev
-sudo pip install h5py
+pip install h5py
+```
+
+To install other requirements:
+```bash
+pip install provider
 ```
 
 ### Data Preparation
