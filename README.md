@@ -2,6 +2,9 @@
 
 [[Project]](http://pwang.pw/spn.html) [[Paper]](https://arxiv.org/abs/1906.10887)   
 
+## Note
+For quick addition of the spatial transformer to your network, refer to [network architecture file](point_based/part_seg/part_seg_model_deform.py#L53) of how transformer can be added, and [offset_deform](point_based/utils/tf_util.py#L120-L160) for the transformer implementation.
+
 ## Overview
 This is the author's re-implementation of the long-tail recognizer described in:  
 "[Spatial Transformer for 3D Point Clouds](https://arxiv.org/abs/1906.10887)"   
@@ -29,7 +32,7 @@ Please navigate to the specific folder first.
 cd point_based
 ```
 
-### Install Tensorflow and required packages
+### Install Tensorflow and h5py
 
 Install <a href="https://www.tensorflow.org/get_started/os_setup" target="_blank">TensorFlow</a>. You may also need to install h5py.
 
@@ -37,11 +40,6 @@ To install h5py for Python:
 ```bash
 sudo apt-get install libhdf5-dev
 pip install h5py
-```
-
-To install other requirements:
-```bash
-pip install provider
 ```
 
 ### Data Preparation
