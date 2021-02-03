@@ -8,7 +8,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
 sys.path.append(os.path.dirname(BASE_DIR))
 import provider
-import part_seg_model_deform as model
+import part_seg_model_deformF as model
+from pdb import set_trace as st
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', default='train_results/trained_models/epoch_160.ckpt', help='Model checkpoint path')
@@ -189,16 +190,16 @@ def predict():
       ori_point_num = len(seg)
 
       batch_data[0, ...] = pc_augment_to_point_num(pc_normalize(pts), point_num)
-
-      seg_pred_res, trans = sess.run(seg_pred, feed_dict={
+        
+      seg_pred_res = sess.run(seg_pred, feed_dict={
             pointclouds_ph: batch_data,
             input_label_ph: cur_label_one_hot, 
             is_training_ph: is_training})
       
-      np.save(os.path.join("saved_shape", str(cur_gt_label), str(shape_idx)), pts)
+      """np.save(os.path.join("saved_shape", str(cur_gt_label), str(shape_idx)), pts)
       for i, tran in enumerate(trans):
             for j, tra in enumerate(tran):
-                np.save(os.path.join("saved_shape", str(cur_gt_label), str(shape_idx)+"_"+str(i)+"_"+str(j)) , np.squeeze(tra))
+                np.save(os.path.join("saved_shape", str(cur_gt_label), str(shape_idx)+"_"+str(i)+"_"+str(j)) , np.squeeze(tra))"""
 
       seg_pred_res = seg_pred_res[0, ...]
 
