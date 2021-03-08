@@ -9,7 +9,7 @@ For quick addition of the spatial transformer to your network, refer to [network
 This is the author's re-implementation of the long-tail recognizer described in:  
 "[Spatial Transformer for 3D Point Clouds](https://arxiv.org/abs/1906.10887)"   
 [Jiayun Wang](http://pwang.pw/),&nbsp; [Rudrasis Chakraborty](https://rudra1988.github.io/),&nbsp; [Stella X. Yu](https://www1.icsi.berkeley.edu/~stellayu/)&nbsp; (UC Berkeley / ICSI)&nbsp; 
-in arXiv 2019
+in IEEE Transactions on Pattern Analysis and Machine Intelligence.
 
 <img src='./assets/intro.png' width=800>
 
