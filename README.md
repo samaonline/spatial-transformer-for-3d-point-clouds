@@ -6,8 +6,8 @@
 For quick addition of the spatial transformer to your network, refer to [network architecture file](point_based/part_seg/part_seg_model_deform.py#L53) of how transformer can be added, and [offset_deform](point_based/utils/tf_util.py#L120-L160) for the transformer implementation.
 
 ## Overview
-This is the author's re-implementation of the long-tail recognizer described in:  
-"[Spatial Transformer for 3D Point Clouds](https://arxiv.org/abs/1906.10887)"   
+This is the author's re-implementation of  
+"[Spatial Transformer for 3D Point Clouds](https://arxiv.org/abs/1906.10887)", by   
 [Jiayun Wang](http://pwang.pw/),&nbsp; [Rudrasis Chakraborty](https://rudra1988.github.io/),&nbsp; [Stella X. Yu](https://www1.icsi.berkeley.edu/~stellayu/)&nbsp; (UC Berkeley / ICSI)&nbsp; 
 in IEEE Transactions on Pattern Analysis and Machine Intelligence.
 
@@ -105,7 +105,7 @@ See instructions in [data/README.md](https://github.com/samaonline/spatial-trans
 
 Please refer to Section 4 of the [paper](https://arxiv.org/abs/1906.10887).
 
-## CAUTION
+## Additional Notes
 The code is implemented based on [Dynamic Graph CNN](https://github.com/WangYueFt/dgcnn), [BilateralNN](https://github.com/MPI-IS/bilateralNN) and [SplatNet](https://github.com/NVlabs/splatnet).
 
 ## License and Citation
