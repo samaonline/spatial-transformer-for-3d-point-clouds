@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
 sys.path.append(os.path.dirname(BASE_DIR))
 import provider
-import part_seg_model_deformF as model
+import part_seg_model_deform as model
 from pdb import set_trace as st
 
 parser = argparse.ArgumentParser()
